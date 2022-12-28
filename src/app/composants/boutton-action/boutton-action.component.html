@@ -1,0 +1,20 @@
+<div class="d-flex flex-row-reverse bd-highlight">
+  <div class="p-2 bd-highlight" *ngIf="isImporterVisible">
+    <button type="button" class="btn btn-warning">
+      <i class="fa-solid fa-cloud-arrow-up"></i>&nbsp;
+      Importer
+    </button>
+  </div>
+  <div class="p-2 bd-highlight" *ngIf="isExporterVisible">
+    <button type="button" class="btn btn-success">
+      <i class="fa-solid fa-cloud-arrow-down"></i>&nbsp;
+      Exporter
+    </button>
+  </div>
+  <div class="p-2 bd-highlight" *ngIf="isNouveauVisible">
+    <button type="button" class="btn btn-primary" (click)="bouttonNouveauClick()">
+      <i class="fa-solid fa-plus"></i>&nbsp;
+      Nouveau
+    </button>
+  </div>
+</div>

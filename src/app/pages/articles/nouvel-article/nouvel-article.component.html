@@ -1,0 +1,61 @@
+<div class="col m-3">
+  <div class="col-md-12 m-3">
+    <img src="assets/product.PNG" class="rounded-circle"  width="200px" height="200px"/>
+  </div>
+  <hr>
+  <div class="col-md-12 m-3">
+    <div class="col-md-12 m-3">
+        <h2><i class="fa-solid fa-info blue-color"></i>&nbsp;Information de l'article</h2>
+    </div>
+    <div class="col-md-12">
+      <form class="m-3 p-3">
+        <div class="row m-3">
+          <div class="col">
+            <input type="text" class="form-control" placeholder="Code article">
+          </div>
+          <div class="col">
+            <input type="text" class="form-control" placeholder="Desingation">
+          </div>
+        </div>
+        <div class="row m-3">
+          <div class="col">
+            <input type="text" class="form-control" placeholder="Prix unitaire Ht">
+          </div>
+          <div class="col">
+            <input type="text" class="form-control" placeholder="Taux TVA">
+          </div>
+        </div>
+
+        <div class="row m-3">
+          <div class="col">
+            <input type="text" class="form-control" placeholder="Prix unitaire TTC">
+          </div>
+          <div class="col">
+            <select class="form-select" aria-label="Default select example">
+              <option selected>Selectionner une categorie</option>
+              <option value="1">One</option>
+              <option value="2">Two</option>
+              <option value="3">Three</option>
+            </select>
+          </div>
+        </div>
+
+      </form>
+    </div>
+  </div>
+
+  <div class="d-flex justify-content-end m-5">
+    <div class="p-2 flex-grow-1 bd-highlight">&nbsp;</div>
+    <div class="p-2 bd-highlight">
+      <button class="btn btn-danger" (click)="cancel()">
+        <i class="fa-solid fa-ban"></i>&nbsp;Annuler
+      </button>
+    </div>
+    <div class="p-2 bd-highlight">
+      <button class="btn btn-primary">
+        <i class="fas fa-save"></i>&nbsp;Enregistrer
+      </button>
+    </div>
+  </div>
+
+</div>

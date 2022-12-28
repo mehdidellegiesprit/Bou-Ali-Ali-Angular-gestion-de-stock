@@ -1,0 +1,47 @@
+<div class="row m-3">
+  <div class="card col-md-4 text-center m-3">
+    <div class="mb-3 mt-3 ">
+      <img src="assets/product.PNG" class="rounded-circle" width="200px" height="200px"/>
+    </div>
+    <div class="mb-3">
+      <h2>Nom Prenom</h2>
+      <small class="form-text text-muted">Adresse , Ville , 12345</small>
+    </div>
+    <div class="col d-flex justify-content-center mb-3">
+      <div class="col-md-12 p-2">
+        <button type="button" class="btn btn-primary mr-3">
+          <i class="fa-solid fa-pencil"></i>&nbsp;Modifier le profil
+        </button>&nbsp;
+        <button type="button" class="btn btn-warning"  (click)="modifierMotDePasse()">
+          <i class="fa-solid fa-lock"></i>&nbsp;Changer le mot de passe
+        </button>
+      </div>
+    </div>
+  </div>
+  <div class="card col-md-7 m-3">
+    <table class="table">
+      <tbody>
+      <tr>
+        <th scope="row">Nom complet </th>
+        <td>Nom Prenom</td>
+      </tr>
+      <tr>
+        <th scope="row">Email</th>
+        <td>email@mail.com</td>
+      </tr>
+      <tr>
+        <th scope="row">Telephone</th>
+        <td>0011 22 33 44 55</td>
+      </tr>
+      <tr>
+        <th scope="row">Adresse</th>
+        <td>Adresse, Ville , 12345 ,Pays</td>
+      </tr>
+      <tr>
+        <th scope="row">Entreprise</th>
+        <td>Nom entreprise</td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

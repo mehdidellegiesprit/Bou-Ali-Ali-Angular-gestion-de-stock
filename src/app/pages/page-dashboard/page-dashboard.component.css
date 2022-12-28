@@ -1,0 +1,19 @@
+.main-container{
+  margin: 50px;
+}
+.min-heigth-600{
+  min-height: 600px;
+}
+.no-flex-wrap{
+  flex-wrap: inherit !important;
+}
+.no-padding{
+  padding-right: 0;
+  /*padding-left: 0;*/
+}
+.border-none{
+  border: none !important;
+}
+.pad{
+  padding-left: 30px;
+}
