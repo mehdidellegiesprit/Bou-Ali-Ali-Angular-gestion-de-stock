@@ -19,11 +19,19 @@
     "target": "ES2022",
     "module": "ES2022",
     "useDefineForClassFields": false,
+    "types": [
+      "@angular/localize"
+    ],
     "lib": [
       "ES2022",
       "dom"
     ]
   },
+  "exclude": [
+    "node_modules",
+    "typings"
+
+  ],
   "angularCompilerOptions": {
     "enableI18nLegacyMessageIdFormat": false,
     "strictInjectionParameters": true,

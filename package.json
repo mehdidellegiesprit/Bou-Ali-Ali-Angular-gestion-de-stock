@@ -6,7 +6,14 @@
     "start": "ng serve",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
-    "test": "ng test"
+    "test": "ng test",
+    "start:local": "npm run gs-api && ng serve -- --proxyConfig=proxy.conf.json",
+    "gs-api": "npm run gs-api:create-dist && npm run gs-api:download && npm run gs-api:download2 && npm run gs-api:extract && npm run gs-api:swagger-gen",
+    "gs-api:create-dist": "mkdir \"tools/swagger/dist\" && mkdir \"tools/swagger/src\"",
+    "gs-api:download": "copy \"C:\\Users\\mehdi\\Desktop\\gestiondestock\\target\\gestiondestock-0.0.1-SNAPSHOT.jar\"  \"C:\\Users\\mehdi\\Desktop\\Angular-gestion-de-stock\\gestion-de-stock\\tools\\swagger\\dist\"",
+    "gs-api:download2": "copy \"C:\\Users\\mehdi\\Desktop\\gestiondestock\\target\\swagger.json\"  \"C:\\Users\\mehdi\\Desktop\\Angular-gestion-de-stock\\gestion-de-stock\\tools\\swagger\\src\"",
+    "gs-api:extract": "node ./tools/swagger/src/swagger.json 0.0.1-SNAPSHOT",
+    "gs-api:swagger-gen": "node node_modules/.bin/ng-swagger-gen -i ./tools/swagger/src/swagger.json -o src/gs-api/src"
   },
   "private": true,
   "dependencies": {
@@ -18,6 +25,12 @@
     "@angular/platform-browser": "^15.0.0",
     "@angular/platform-browser-dynamic": "^15.0.0",
     "@angular/router": "^15.0.0",
+    "@fortawesome/fontawesome-free": "^6.2.1",
+    "@ng-bootstrap/ng-bootstrap": "^14.0.0",
+    "@popperjs/core": "^2.11.6",
+    "bootstrap": "^5.2.3",
+    "jquery": "^3.6.3",
+    "popper.js": "^1.16.1",
     "rxjs": "~7.5.0",
     "tslib": "^2.3.0",
     "zone.js": "~0.12.0"
@@ -26,13 +39,19 @@
     "@angular-devkit/build-angular": "^15.0.0",
     "@angular/cli": "~15.0.0",
     "@angular/compiler-cli": "^15.0.0",
+    "@angular/localize": "^15.0.0",
     "@types/jasmine": "~4.3.0",
+    "@types/jest": "^29.2.4",
     "jasmine-core": "~4.5.0",
+    "jest": "^29.3.1",
     "karma": "~6.4.0",
     "karma-chrome-launcher": "~3.1.0",
     "karma-coverage": "~2.2.0",
     "karma-jasmine": "~5.1.0",
     "karma-jasmine-html-reporter": "~2.0.0",
+    "ng-packagr": "^5.3.0",
+    "ng-swagger-gen": "^1.7.0-b",
+    "ts-jest": "^29.0.3",
     "typescript": "~4.8.2"
   }
 }
