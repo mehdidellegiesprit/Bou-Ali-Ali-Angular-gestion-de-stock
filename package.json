@@ -13,7 +13,7 @@
     "gs-api:download": "copy \"C:\\Users\\mehdi\\Desktop\\gestiondestock\\target\\gestiondestock-0.0.1-SNAPSHOT.jar\"  \"C:\\Users\\mehdi\\Desktop\\Angular-gestion-de-stock\\gestion-de-stock\\tools\\swagger\\dist\"",
     "gs-api:download2": "copy \"C:\\Users\\mehdi\\Desktop\\gestiondestock\\target\\swagger.json\"  \"C:\\Users\\mehdi\\Desktop\\Angular-gestion-de-stock\\gestion-de-stock\\tools\\swagger\\src\"",
     "gs-api:extract": "node ./tools/swagger/src/swagger.json 0.0.1-SNAPSHOT",
-    "gs-api:swagger-gen": "node ./node_modules/.bin/ng-swagger-gen -i ./tools/swagger/src/swagger.json -o src/gs-api/src"
+    "gs-api:swagger-gen": "java -jar \"./node_modules/.bin/ng-swagger-gen\" -i \"./tools/swagger/src/swagger.json\" -o \"src/gs-api/src\""
   },
   "private": true,
   "dependencies": {
@@ -49,8 +49,8 @@
     "karma-coverage": "~2.2.0",
     "karma-jasmine": "~5.1.0",
     "karma-jasmine-html-reporter": "~2.0.0",
-    "ng-packagr": "^5.3.0",
-    "ng-swagger-gen": "^1.7.0-b",
+    "ng-packagr": "^15.0.3",
+    "ng-swagger-gen": "^1.8.1",
     "ts-jest": "^29.0.3",
     "typescript": "~4.8.2"
   }
