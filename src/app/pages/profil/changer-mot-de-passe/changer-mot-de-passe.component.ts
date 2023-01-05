@@ -31,12 +31,9 @@ export class ChangerMotDePasseComponent implements OnInit{
 
 
   changerMotDePasseUtilisateur() :void{
+    this.changerMotDePasseDto.id = this.userService.getConnectedUser().id;
     console.log("changerMotDePasseUtilisateur action button") ;
     console.log(this.changerMotDePasseDto) ;
-
-    this.changerMotDePasseDto.id = this.userService.getConnectedUser().id;
-
-
     this.userService.changerMotDePasse(this.changerMotDePasseDto)
       .subscribe(data =>{
         // rien faire
