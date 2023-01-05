@@ -32,6 +32,7 @@ const routes: Routes = [
   {
     path:'',
     component:PageDashboardComponent,
+    canActivate:[ApplicationGuardService],
     children:[
       {
         path:'statistiques',

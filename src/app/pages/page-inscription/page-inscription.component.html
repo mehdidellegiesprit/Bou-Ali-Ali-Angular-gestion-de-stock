@@ -5,40 +5,45 @@
     </div>
 
     <div class="card-body">
-      <div class="mb-3">
-        <input type="text" class="form-control"  placeholder="Nom">
+      <div class="alert alert-danger" *ngIf="errorMsg.length > 0">
+        <div *ngFor="let msg of errorMsg">
+          <span>{{msg}}</span>
+        </div>
       </div>
       <div class="mb-3">
-        <input type="text" class="form-control"  placeholder="Code fiscal">
+        <input type="text" class="form-control"  placeholder="Nom" [(ngModel)]="entrepriseDto.nom">
       </div>
       <div class="mb-3">
-        <input type="email" class="form-control"  placeholder="E-Mail">
+        <input type="text" class="form-control"  placeholder="Code fiscal" [(ngModel)]="entrepriseDto.codeFiscal">
       </div>
       <div class="mb-3">
-        <input type="text" class="form-control"  placeholder="Adresse 1">
+        <input type="email" class="form-control"  placeholder="E-Mail" [(ngModel)]="entrepriseDto.email">
       </div>
       <div class="mb-3">
-        <input type="text" class="form-control"  placeholder="Adresse 2">
+        <input type="text" class="form-control"  placeholder="Adresse 1" [(ngModel)]="entrepriseDto.adresse.adresse1">
       </div>
       <div class="mb-3">
-        <input type="text" class="form-control"  placeholder="Ville">
+        <input type="text" class="form-control"  placeholder="Adresse 2"[(ngModel)]="entrepriseDto.adresse.adresse2">
       </div>
       <div class="mb-3">
-        <input type="text" class="form-control"  placeholder="Code Postal">
+        <input type="text" class="form-control"  placeholder="Ville" [(ngModel)]="entrepriseDto.adresse.ville">
       </div>
       <div class="mb-3">
-        <input type="text" class="form-control"  placeholder="Pays">
+        <input type="text" class="form-control"  placeholder="Code Postal" [(ngModel)]="entrepriseDto.adresse.codePostale">
       </div>
       <div class="mb-3">
-        <input type="password" class="form-control"  placeholder="Mot de passe">
+        <input type="text" class="form-control"  placeholder="Pays" [(ngModel)]="entrepriseDto.adresse.pays">
       </div>
       <div class="mb-3">
-        <input type="password" class="form-control"  placeholder="Confirmer mot de passe">
+        <input type="text" class="form-control"  placeholder="Description"[(ngModel)]="entrepriseDto.description" >
+      </div>
+      <div class="mb-3">
+        <input type="text" class="form-control"  placeholder="Numero de telephone" [(ngModel)]="entrepriseDto.numTel">
       </div>
 
       <div class="mb-3 d-flex justify-content-between">
         <button [routerLink]="['/login']" class="btn btn-link">Se connecter</button>
-        <button type="button" class="btn btn-primary">
+        <button type="button" class="btn btn-primary" (click)="inscrire()">
           <i class="fa-solid fa-check"></i>&nbsp;S' inscrire</button>
       </div>
     </div>

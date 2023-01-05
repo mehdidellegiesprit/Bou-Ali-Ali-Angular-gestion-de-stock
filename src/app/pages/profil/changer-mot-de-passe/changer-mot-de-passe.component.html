@@ -11,13 +11,13 @@
   <div class="card col-md-7 m-3">
     <form>
       <div class="mb-3 mt-3">
-        <input type="password" class="form-control" placeholder="Ancien mot de passe">
+        <input type="password" class="form-control" placeholder="Ancien mot de passe" [(ngModel)]="ancienMotDePasse" name="ancienmotdepasse">
       </div>
       <div class="mb-3">
-        <input type="password" class="form-control" placeholder="Nouveau mot de passe">
+        <input type="password" class="form-control" placeholder="Nouveau mot de passe" [(ngModel)]="changerMotDePasseDto.motDePasse"name="nouveaumotdepasse">
       </div>
       <div class="mb-3">
-        <input type="password" class="form-control" placeholder="Confirmer mot de passe">
+        <input type="password" class="form-control" placeholder="Confirmer mot de passe"[(ngModel)]="changerMotDePasseDto.confirmMotDePasse"name="confirmermotdepasse">
       </div>
     </form>
 
@@ -30,7 +30,7 @@
         </button>
       </div>
       <div class="p-2 bd-highlight">
-        <button class="btn btn-primary">
+        <button class="btn btn-primary" (click)="changerMotDePasseUtilisateur()">
           <i class="fas fa-save"></i>&nbsp;Enregistrer
         </button>
       </div>

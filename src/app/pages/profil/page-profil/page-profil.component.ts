@@ -1,5 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {Router} from "@angular/router";
+import {CategoriesService} from "../../../services/categories/categories.service";
 
 @Component({
   selector: 'app-page-profil',
@@ -9,7 +10,7 @@ import {Router} from "@angular/router";
 export class PageProfilComponent implements OnInit{
 
   constructor(
-    private router:Router
+    private router:Router,
   ) {}
 
   ngOnInit(): void {

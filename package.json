@@ -13,7 +13,7 @@
     "gs-api:download": "copy \"C:\\Users\\mehdi\\Desktop\\gestiondestock\\target\\gestiondestock-0.0.1-SNAPSHOT.jar\"  \"C:\\Users\\mehdi\\Desktop\\Angular-gestion-de-stock\\gestion-de-stock\\tools\\swagger\\dist\"",
     "gs-api:download2": "copy \"C:\\Users\\mehdi\\Desktop\\gestiondestock\\target\\swagger.json\"  \"C:\\Users\\mehdi\\Desktop\\Angular-gestion-de-stock\\gestion-de-stock\\tools\\swagger\\src\"",
     "gs-api:extract": "node ./tools/swagger/src/swagger.json 0.0.1-SNAPSHOT",
-    "gs-api:swagger-gen": "java -jar \"./node_modules/.bin/ng-swagger-gen\" -i \"./tools/swagger/src/swagger.json\" -o \"src/gs-api/src\""
+    "gs-api:swagger-gen": "ng-swagger-gen -i ./tools/swagger/src/swagger.json -o src/gs-api/src"
   },
   "private": true,
   "dependencies": {

@@ -1240,7 +1240,7 @@
         }
       }
     },
-    "gestiondestock/v1/auth/authenticate" : {
+    "/gestiondestock/v1/auth/authenticate" : {
       "post" : {
         "operationId" : "authenticate",
         "parameters" : [ {

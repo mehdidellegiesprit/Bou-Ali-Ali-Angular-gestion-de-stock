@@ -5,11 +5,14 @@
     </div>
 
     <div class="card-body">
-      <div class="mb-3">
-        <input type="email" class="form-control"  placeholder="E-Mail" [ngModel]="authenticationRequest.login">
+      <div class="alert alert-danger" *ngIf="errorMessage">
+        {{errorMessage}}
       </div>
       <div class="mb-3">
-        <input type="password" class="form-control"  placeholder="Mot de passe" [ngModel]="authenticationRequest.password">
+        <input type="email" class="form-control"  placeholder="E-Mail" [(ngModel)]="authenticationRequest.login">
+      </div>
+      <div class="mb-3">
+        <input type="password" class="form-control"  placeholder="Mot de passe" [(ngModel)]="authenticationRequest.password">
       </div>
       <div class="mb-3 d-flex justify-content-between">
         <a [routerLink]="['/inscrire']" class="btn btn-link">S' inscrire</a>
