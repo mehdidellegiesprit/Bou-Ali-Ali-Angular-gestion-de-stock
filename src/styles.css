@@ -27,4 +27,6 @@ body.modal-open div.modal-backdrop {
 .section{
   display: block;
 }
-
+.toastr {
+  width: auto !important;
+}

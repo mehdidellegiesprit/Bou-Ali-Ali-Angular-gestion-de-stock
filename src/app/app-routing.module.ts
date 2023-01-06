@@ -123,6 +123,11 @@ const routes: Routes = [
         canActivate:[ApplicationGuardService]
       },
       {
+        path:'nouvellecategorie/:idCategory',
+        component:NouvelleCategoryComponent,
+        canActivate:[ApplicationGuardService]
+      },
+      {
         path:'utilisateurs',
         component:PageUtilisateurComponent,
         canActivate:[ApplicationGuardService]

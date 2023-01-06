@@ -11,45 +11,68 @@
   </div>
 <!--  first categorie-->
   <div class="col-md-12 m-1 p-3">
-    <div class="row custom-border m-1 p-3">
+      <div class="row custom-border m-1 p-3 alert alert-danger" *ngIf="errorMsgs">
+      {{errorMsgs}}
+      </div>
+    <div class="row custom-border m-1 p-3" *ngFor="let cat of listCategories">
       <div class="col-md-3 custom-border-right">
-        Code categorie
+        {{cat.code}}
+      </div>
+      <div class="col-md-6 custom-border-right">
+        {{cat.designation}}
       </div>
       <div class="col-md-3 ">
-        Description categorie
+        <div class="row">
+          <div class="col-md-4">
+            <button type="button" class="btn btn-link" (click)="modifierCategory(cat.id)">
+              <div><i class="fa-solid fa-pencil"></i></div>&nbsp;
+              Modifier
+            </button>
+          </div>
+          <div class="col-md-4">
+            <button type="button" class="btn btn-link" data-bs-toggle="modal" data-bs-target="#modalDeleteCat"
+                    (click)="selectCatPourSupprimer(cat.id)">
+              <div><i class="fa-solid fa-trash-can"></i></div>&nbsp;Supprimer
+            </button>
+          </div>
+          <div class="col-md-4">
+            <button type="button" class="btn btn-link">
+              <div> <i class="fa-solid fa-list"></i></div>Details
+            </button>
+          </div>
+        </div>
       </div>
     </div>
   </div>
 
-<!--  second categorie-->
-  <div class="col-md-12 m-1 p-3">
-    <div class="row custom-border m-1 p-3">
-      <div class="col-md-3 custom-border-right">
-        Code categorie
-      </div>
-      <div class="col-md-3 ">
-        Description categorie
-      </div>
-    </div>
-  </div>
-
-<!--  thirst categorie -->
-  <div class="col-md-12 m-1 p-3">
-    <div class="row custom-border m-1 p-3">
-      <div class="col-md-3 custom-border-right">
-        Code categorie
-      </div>
-      <div class="col-md-3 ">
-        Description categorie
-      </div>
-    </div>
-  </div>
-
-  <div class="row m-3">
+  <div class="row m-3" *ngIf="listCategories.length>0">
     <div class="col-md-12 text-center">
       <app-pagination></app-pagination>
     </div>
   </div>
 
-
 </div>
+
+<!-- Modal -->
+<div class="modal fade" id="modalDeleteCat" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="staticBackdropLabel">Confirmation</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        Etes vous-sur vouloire supprimer cette categorie?
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" (click)="annulerSupprissionCat()">
+          <i class="fa-solid fa-ban"></i>&nbsp;Annuler
+        </button>
+        <button type="button" class="btn btn-danger" data-bs-dismiss="modal" (click)="confirmerEtSupprimerCat()">
+          <i class="fa-solid fa-trash-can"></i>&nbsp;Supprimer
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- End of Modal -->
