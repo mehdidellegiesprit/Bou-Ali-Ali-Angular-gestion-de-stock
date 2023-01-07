@@ -9,33 +9,42 @@
     </div>
     <div class="col-md-12">
       <form class="m-3 p-3">
-        <div class="row m-3">
-          <div class="col">
-            <input type="text" class="form-control" placeholder="Code article">
-          </div>
-          <div class="col">
-            <input type="text" class="form-control" placeholder="Desingation">
+        <div class="m-3 p-3 alert alert-danger" *ngIf="errorMsg.length > 0">
+          <div *ngFor="let msg of errorMsg">
+            <span>{{msg}}</span>
           </div>
         </div>
         <div class="row m-3">
           <div class="col">
-            <input type="text" class="form-control" placeholder="Prix unitaire Ht">
+            <input type="text" class="form-control" name="codearticle" placeholder="Code article" [(ngModel)]="articleDto.codeArticle">
           </div>
           <div class="col">
-            <input type="text" class="form-control" placeholder="Taux TVA">
+            <input type="text" class="form-control" name="designationarticle" placeholder="Desingation" [(ngModel)]="articleDto.designation">
+          </div>
+        </div>
+        <div class="row m-3">
+          <div class="col">
+            <input type="text" class="form-control" name="prixhtarticle" placeholder="Prix unitaire Ht"
+                   (input)="calculerTTC()"
+                   [(ngModel)]="articleDto.prixUnitaireHt">
+          </div>
+          <div class="col">
+            <input type="text" class="form-control" name="tvaarticle" placeholder="Taux TVA"
+                   (input)="calculerTTC()"
+                   [(ngModel)]="articleDto.tauxTva">
           </div>
         </div>
 
         <div class="row m-3">
           <div class="col">
-            <input type="text" class="form-control" placeholder="Prix unitaire TTC">
+            <input type="text" class="form-control" name="prixttcarticle" placeholder="Prix unitaire TTC" [(ngModel)]="articleDto.prixUnitaireTtc">
           </div>
           <div class="col">
-            <select class="form-select" aria-label="Default select example">
-              <option selected>Selectionner une categorie</option>
-              <option value="1">One</option>
-              <option value="2">Two</option>
-              <option value="3">Three</option>
+            <select class="form-select" aria-label="Default select example" name="categorie" [(ngModel)]="categoryDto.id">
+              <option selected >Selectionner une categorie</option>
+              <option [value]="cat.id" *ngFor="let cat of listeCategorie">
+                {{cat.code}} - {{cat.designation}}
+              </option>
             </select>
           </div>
         </div>
@@ -52,7 +61,7 @@
       </button>
     </div>
     <div class="p-2 bd-highlight">
-      <button class="btn btn-primary">
+      <button class="btn btn-primary" (click)="enregistrerArticle()">
         <i class="fas fa-save"></i>&nbsp;Enregistrer
       </button>
     </div>

@@ -8,19 +8,19 @@
 
         <div class="row">
           <div class="col-md-1"><i class="fa-solid fa-info blue-color"></i></div>
-          <div class="col-md-11">code article </div>
+          <div class="col-md-11">{{ articleDto.codeArticle }}</div>
         </div>
         <div class="row">
           <div class="col-md-1"><i class="fa-solid fa-info blue-color"></i></div>
-          <div class="col-md-11">designation</div>
+          <div class="col-md-11">{{ articleDto.designation }}</div>
         </div>
         <div class="row">
           <div class="col-md-1"><i class="fa-solid fa-dollar-sign blue-color"></i></div>
-          <div class="col-md-11">prix Ht</div>
+          <div class="col-md-11">{{ articleDto.prixUnitaireHt }} $</div>
         </div>
         <div class="row">
           <div class="col-md-1"><i class="fa-solid fa-dollar-sign blue-color"></i></div>
-          <div class="col-md-11">prix Ttc</div>
+          <div class="col-md-11">{{ articleDto.prixUnitaireTtc }} $</div>
         </div>
 
       </div>
@@ -35,8 +35,8 @@
       </div>
       <div class="col-md-10">
         <div class="row">
-          <div class="col-md-12">code categorie</div>
-          <div class="col-md-12">description categorie</div>
+          <div class="col-md-12">{{ articleDto.category?.code }}</div>
+          <div class="col-md-12">{{ articleDto.category?.designation }}</div>
         </div>
       </div>
     </div>
@@ -48,13 +48,13 @@
   <div class="col-md-3 mb-1 mt-1">
     <div class="row">
       <div class="col-md-4">
-        <button type="button" class="btn btn-link">
+        <button type="button" class="btn btn-link" (click)="modifierArticle()">
           <div><i class="fa-solid fa-pencil"></i></div>&nbsp;
           Modifier
         </button>
       </div>
       <div class="col-md-4">
-        <button type="button" class="btn btn-link">
+        <button type="button" class="btn btn-link text-bg-danger" data-bs-toggle="modal" [attr.data-bs-target]="'#modalDeleteArticle'+articleDto.id">
           <div><i class="fa-solid fa-trash-can"></i></div>&nbsp;Supprimer
         </button>
       </div>
@@ -65,6 +65,27 @@
       </div>
     </div>
   </div>
-
-
+  <!-- Modal -->
+  <div class="modal fade" id="modalDeleteArticle{{articleDto.id}}" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="staticBackdropLabel">Confirmation</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          Etes vous-sur vouloire supprimer cet article ?
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+            <i class="fa-solid fa-ban"></i>&nbsp;Annuler
+          </button>
+          <button type="button" class="btn btn-danger" data-bs-dismiss="modal" (click)="confirmerEtSupprimerArticle()">
+            <i class="fa-solid fa-trash-can"></i>&nbsp;Supprimer
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- End of Modal -->
 </div>

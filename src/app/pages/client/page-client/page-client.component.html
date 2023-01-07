@@ -11,10 +11,12 @@
   </div>
 
   <div class="col m-4 p-3">
-    <app-detail-clt-frs></app-detail-clt-frs>
-    <app-detail-clt-frs></app-detail-clt-frs>
-    <app-detail-clt-frs></app-detail-clt-frs>
-    <app-detail-clt-frs></app-detail-clt-frs>
+    <app-detail-clt-frs
+      *ngFor="let client of listClient"
+      [clientfournisseurDto]="client"
+      [origin]="'client'"
+    >
+    </app-detail-clt-frs>
   </div>
 
   <div class="row m-3">
